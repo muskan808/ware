@@ -29,7 +29,6 @@ const Dashboard = () => {
             <h1 className="text-3xl font-bold mb-4">Delivery Management Dashboard</h1>
             
             <div className="grid grid-cols-3 gap-4">
-                {/* Agents Section */}
                 <div className="bg-white p-4 shadow-md rounded-lg">
                     <h2 className="text-xl font-semibold mb-2">Agents</h2>
                     <ul>
@@ -38,8 +37,6 @@ const Dashboard = () => {
                         ))}
                     </ul>
                 </div>
-                
-                {/* Orders Section */}
                 <div className="bg-white p-4 shadow-md rounded-lg">
                     <h2 className="text-xl font-semibold mb-2">Orders</h2>
                     <ul>
@@ -48,8 +45,6 @@ const Dashboard = () => {
                         ))}
                     </ul>
                 </div>
-                
-                {/* Warehouses Section */}
                 <div className="bg-white p-4 shadow-md rounded-lg">
                     <h2 className="text-xl font-semibold mb-2">Warehouses</h2>
                     <ul>

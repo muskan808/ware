@@ -1,11 +1,12 @@
-const mongoose = require("mongoose");
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/db");
 
-const AgentSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  phone: { type: String, required: true, unique: true },
-  warehouse: { type: mongoose.Schema.Types.ObjectId, ref: "Warehouse" }, // Link to warehouse
-  maxHours: { type: Number, default: 10 },
-  maxDistance: { type: Number, default: 100 },
+const Agent = sequelize.define("Agent", {
+  name: { type: DataTypes.STRING, allowNull: false },
+  phone: { type: DataTypes.STRING, allowNull: false, unique: true },
+  warehouse_id: { type: DataTypes.INTEGER, allowNull: false },
+  max_hours: { type: DataTypes.INTEGER, defaultValue: 10 },
+  max_distance: { type: DataTypes.INTEGER, defaultValue: 100 }
 });
 
-module.exports = mongoose.model("Agent", AgentSchema);
+module.exports = Agent;

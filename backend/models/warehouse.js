@@ -1,8 +1,28 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/db");
 
-const WarehouseSchema = new mongoose.Schema({
-    city: String,
-    warehouseId: String
+const Warehouse = sequelize.define("Warehouse", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  location: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  latitude: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
+  longitude: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
 });
 
-module.exports = mongoose.model('Warehouse', WarehouseSchema);
+module.exports = Warehouse;
