@@ -5,7 +5,7 @@ const Dashboard = () => {
     const [agents, setAgents] = useState([]);
     const [orders, setOrders] = useState([]);
     const [warehouses, setWarehouses] = useState([]);
-    const API_BASE_URL = "http://localhost:5000/api"; 
+    const API_BASE_URL = "http://localhost:3000/"; 
     useEffect(() => {
         fetchData();
     }, []);

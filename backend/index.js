@@ -1,15 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
-const PORT = process.env.PORT || 5000;
+app.use(cors());
+app.use(express.json());
+app.use("/warehouses", require("./routes/warehouseRoutes"));
+app.use("/agents", require("./routes/agentRoutes"));
+app.use("/orders", require("./routes/orderRoutes"));
+app.use("/checkins", require("./routes/checkinRoutes"));
+app.use("/payments", require("./routes/paymentRoutes"));
 
-app.use(express.json()); // Ensure JSON parsing is enabled
-
-app.get("/", (req, res) => {
-  res.send("API is working!");
-});
-
-app.use("/api/agents", require("./routes/agentRoutes")); // Ensure correct path
-app.use("/api/orders", require("./routes/orderRoutes"));
-app.use("/api/warehouses", require("./routes/warehouseRoutes"));
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(5000, () => console.log("Server running on port 5000"));
