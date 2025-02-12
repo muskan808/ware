@@ -47,29 +47,20 @@ Assigns orders to a warehouse
 🔧 Backend Setup
 
 Clone the repository:
-git clone <your-repo-url>
+git clone https://github.com/muskan808/ware.git
+
 cd backend
-
-Install dependencies:
-
-npm install
-
+Install dependencies: npm install
+node index.js
 Start the backend server:
-
-npm start
-
 The API will run at http://localhost:5000.
 
 🎨 Frontend Setup
-
 Navigate to the frontend directory:
-
 cd frontend
-
-Install dependencies:
-npm install
-Start the frontend application:
+Install dependencies: npm install
 npm start
+Start the frontend application:
 The React app will run at http://localhost:3000.
 
 🔗 Connecting Backend with Frontend
