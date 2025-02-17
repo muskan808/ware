@@ -12,7 +12,6 @@ const Order = sequelize.define("Order", {
     type: DataTypes.ENUM("PENDING", "ASSIGNED", "DELIVERED"),
     defaultValue: "PENDING",
   },
-  agent_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: Agent, key: "id" } },
   warehouse_id: { type: DataTypes.INTEGER, allowNull: false, references: { model: Warehouse, key: "id" } },
 },
 {
