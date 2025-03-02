@@ -1,5 +1,5 @@
 const Order = require("../models/Order");
-const { assignOrdersToWarehouse } = require("../services/orderService");
+const orderService = require("../routes/orderService");
 
 const addOrder = async (req, res) => {
   try {
@@ -22,7 +22,7 @@ const getAllOrders = async (req, res) => {
 const assignOrders = async (req, res) => {
   try {
     const { warehouse_id } = req.body;
-    const result = await assignOrdersToWarehouse(warehouse_id);
+    const result = await orderService.assignOrdersToAgents(warehouse_id);
     res.json(result);
   } catch (error) {
     res.status(500).json({ error: error.message });

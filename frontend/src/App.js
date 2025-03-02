@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getOrders, addOrder, getWarehouses, agentCheckin, getAgents } from './api'; // Import API functions
+import { getOrders, addOrder, getWarehouses, agentCheckin, getAgents } from './api';
 import axios from "axios"; // Import axios
 import './App.css';
 
@@ -8,7 +8,6 @@ function App() {
   const [warehouses, setWarehouses] = useState([]);
   const [orders, setOrders] = useState([]);
 
-  // Fetch Agents (You can use the agent API as well)
   const fetchAgents = async () => {
     try {
       const response = await getAgents();
@@ -18,7 +17,6 @@ function App() {
     }
   };
 
-  // Fetch Orders using the API function
   const fetchOrders = async () => {
     try {
       const response = await getOrders();
@@ -28,7 +26,6 @@ function App() {
     }
   };
 
-  // Fetch Warehouses using the API function
   const fetchWarehouses = async () => {
     try {
       const response = await getWarehouses();
@@ -38,7 +35,6 @@ function App() {
     }
   };
 
-  // Handle Order Submission
   const handleOrderSubmit = async () => {
     try {
       await addOrder({});
@@ -48,7 +44,6 @@ function App() {
     }
   };
 
-  // Handle Agent Check-in
   const handleCheckin = async (agentId, warehouseId) => {
     const checkinData = { agentId, warehouseId };
     try {
@@ -59,7 +54,6 @@ function App() {
     }
   };
 
-  // Effect hook to load data on component mount
   useEffect(() => {
     fetchAgents();
     fetchWarehouses();
